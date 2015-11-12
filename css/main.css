@@ -28,7 +28,7 @@ video {
 h1 {
   text-align: right;
   font-size: 53px;
-  margin-bottom: 5px;
+  margin: 0;
   font-weight: lighter;
 }
 
@@ -47,30 +47,23 @@ h3 {
 
 h4 {
   font-size: 22px;
-  margin-top: 5px;
+  margin: 0;
   text-align: right;
 }
 
-header img {
-  max-height: 9em;
+img {
+  margin-top: 10px;
 }
 
-.col-6 > header {
-  vertical-align: text-bottom;
+.headertext {
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
 }
 
 .worklink {
   text-align: justify;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.col-12 > img {
-  padding-top: 25px;
-}
-
-.col-4 > img {
-  width: 95%;
+  padding: 0 15px;
 }
 
 .row {
@@ -139,6 +132,10 @@ header img {
   text-align: right;
 }
 
+.logo {
+  width: 16.66%;
+}
+
 @media only screen and (max-width: 380px) {
   p {
     font-size: 0.8em;
@@ -148,10 +145,6 @@ header img {
 @media only screen and (max-width: 500px) {
   body {
     font-size: 0.8em;
-  }
-
-  header img {
-    max-height: 4em;
   }
 
   h1 {
@@ -188,10 +181,6 @@ header img {
     width: 50%;
   }
 
-  .workimage > img {
-    max-width: 100%;
-  }
-
   .worklink {
     width: 50%;
     vertical-align: middle;
@@ -201,10 +190,6 @@ header img {
 @media only screen and (min-width: 501px) and (max-width: 1000px) {
   body {
     font-size: 1em;
-  }
-
-  header img {
-    max-height: 9em;
   }
 
   h1 {
@@ -241,10 +226,6 @@ header img {
   .workimage {
     width: 50%;
     text-align: left;
-  }
-
-  .workimage > img {
-    max-width: 100%;
   }
 
   .worklink {
