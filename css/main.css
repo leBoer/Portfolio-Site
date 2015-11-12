@@ -55,6 +55,31 @@ img {
   margin-top: 10px;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  float: left;
+}
+
+a:link, a:visited {
+  display: block;
+  width: 120px;
+  font-weight: bold;
+  text-align: center;
+  padding: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.col-12 a:hover, a:active {
+  background-color: #7A991A;
+}
+
 .headertext {
   position: relative;
   top: 50%;
@@ -68,7 +93,6 @@ img {
 
 .row {
   width: 100%;
-  margin-bottom: 5px;
   display: flex;
   flex-wrap: wrap;
 }
