@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Framework Test Page</title>
   <link rel="stylesheet" href="css/main.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
 </head>
 
 <body>
@@ -23,14 +23,28 @@
         </div>
       </div>
       <div class="col-12">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
+        <a id="menu" class="hamburger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
+          </svg>
+        </a>
+        <nav class="navbar">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
+
+    <nav id="drawer" class="navhidden">
+      <a href="index.html"><h5>Home</h5></a>
+      <a href="news.html"><h5>News</h5></a>
+      <a href="contact.html"><h5>Contact</h5></a>
+      <a href="about.html"><h5>About</h5></a>
+    </nav>
 
     <div class="row">
       <div class="col-12">
@@ -90,6 +104,25 @@
 
     </div>
   </div>
+
+  <script>
+    /*
+     * Open the drawer when the menu ison is clicked.
+     */
+    var menu = document.querySelector('#menu');
+    var grid = document.querySelector('grid');
+    var drawer = document.querySelector('#drawer');
+
+    menu.addEventListener('click', function(e) {
+      drawer.classList.toggle('open');
+      e.stopPropagation();
+    });
+    grid.addEventListener('click', function() {
+      drawer.classList.remove('open');
+    });
+
+  </script>
+
 </body>
 
 </html>

@@ -76,17 +76,13 @@ a:link, a:visited {
   text-transform: uppercase;
 }
 
-.col-12 a:hover, a:active {
-  background-color: #7a991a;
-}
-
 .headertext {
   transform: translateY(50%);
 }
 
 .worklink {
   text-align: justify;
-  padding: 0 15px;
+  padding: 0 15px 10px;
 }
 
 .row {
@@ -152,10 +148,6 @@ a:link, a:visited {
   p {
     font-size: 14px;
   }
-
-  ul {
-    display: none;
-  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -163,7 +155,7 @@ a:link, a:visited {
     font-size: 16px;
   }
 
-  ul {
+  .navbar {
     display: none;
   }
 
@@ -187,7 +179,7 @@ a:link, a:visited {
 
   p {
     margin: 0;
-    text-align: right;
+    text-align: justify;
   }
 
   .col-4 {
@@ -271,10 +263,22 @@ a:link, a:visited {
     border-top-style: solid;
     border-top-color: #bcbbbb;
   }
+
+  .navhidden {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .col-12 a:hover, a:active {
+    background-color: #7a991a;
+  }
 }
 
 @media only screen and (max-width: 649px) {
-  ul{
+  .navbar {
     display: none;
   }
 
@@ -298,6 +302,14 @@ a:link, a:visited {
   .col-4 {
     text-align: center;
   }
+
+  h5 {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 4px 8px;
+    color: #FFF;
+    margin: 0;
+    font: 14px Sans-Serif;
+  }
 }
 
 @media only screen and (min-width: 1001px) {
@@ -308,4 +320,33 @@ a:link, a:visited {
 .col-4:last-of-type {
     text-align: right;
   }
+}
+
+/*
+Related to the hamburger off-canvas menu
+*/
+
+a#menu svg {
+  width: 40px;
+}
+
+.navhidden {
+  width: 200px;
+  height: 100%;
+  position: absolute;
+  /* This trasform moves the drawer off canvas. */
+  -webkit-transform: translate(-300px, 0);
+  transform: translate(-300px, 0);
+  /* Optionally, we animate the drawer. */
+  transition: transform 0.3s ease;
+}
+
+.navhidden.open {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.navhidden, grid {
+  padding: 1em;
+  box-sizing:border-box;
 }
